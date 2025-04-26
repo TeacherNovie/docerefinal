@@ -1,55 +1,63 @@
 :root {
-  --primary-color: #4a90e2;
-  --secondary-color: #f5f5f5;
+  --primary-color: #ffab00;
+  --secondary-color: #ffdd83;
+  --accent-color: #ffd600;
   --text-color: #333;
-  --bg-color: #fff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   color: var(--text-color);
-  background-color: var(--bg-color);
+  background-color: var(--secondary-color);
   line-height: 1.6;
   padding: 20px;
 }
 
-header, section, footer { margin-bottom: 40px; }
 header {
+  background-image: url('../assets/images/header-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 60px 20px;
   text-align: center;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 20px 0;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-h1 { font-size: 2.5rem; }
-h2 { margin-bottom: 10px; font-size: 2rem; color: var(--primary-color); }
+header h1 { font-size: 3rem; }
+header p { font-size: 1.2rem; }
 
-.calendly-inline-widget { width: 100%; }
-
-#comment-form label {
-  display: block;
-  margin-bottom: 10px;
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-#comments-list .comment {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-form input, form textarea, form button,
-#comment-form input, #comment-form textarea, #comment-form select, #comment-form button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+h2 {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 2rem;
 }
 
 button {
   cursor: pointer;
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: var(--accent-color);
+  color: #333;
   border: none;
   padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+form input, form textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
 }
 
 @media (min-width: 768px) {
