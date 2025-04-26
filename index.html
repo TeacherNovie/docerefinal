@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docere English Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Docere English Online</h1>
+    <p>Quality English and Science Classes Online</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I have been teaching English and Science since 2010, certified with TEFL, and experienced in guiding students from beginner to advanced levels.</p>
+  </section>
+
+  <section id="booking">
+    <h2>Book a Lesson</h2>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/noviereambonanza/25min" style="min-width:320px;height:580px;"></div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  </section>
+
+  <section id="live-chat">
+    <h2>Live Chat</h2>
+    <a href="https://teams.microsoft.com/l/chat/0/0?users=noviereambonanza@gmail.com" target="_blank">Chat with me on Microsoft Teams</a>
+  </section>
+
+  <section id="comments">
+    <h2>Student Comments & Ratings</h2>
+    <div id="comment-form">
+      <label>Name: <input type="text" id="name"></label>
+      <label>Rating: 
+        <select id="rating">
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★☆</option>
+          <option value="3">★★★☆☆</option>
+          <option value="2">★★☆☆☆</option>
+          <option value="1">★☆☆☆☆</option>
+        </select>
+      </label>
+      <label>Comment: <textarea id="comment-text"></textarea></label>
+      <button id="submit-comment">Submit</button>
+    </div>
+    <div id="comments-list"></div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon: Check out our blog posts!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:noviereambonanza@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <section id="payment">
+      <h2>Payments</h2>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="business" value="noviereambonanza@gmail.com">
+        <input type="hidden" name="currency_code" value="USD">
+        <button type="submit">Donate/Pay via PayPal</button>
+      </form>
+    </section>
+
+    <section id="other-teachers">
+      <p>Other teachers available if I'm unavailable. <a href="#contact">Contact us</a> to choose another teacher.</p>
+    </section>
+  </footer>
+
+  <script src="js/comments.js"></script>
+</body>
+</html>
