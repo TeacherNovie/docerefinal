@@ -1,103 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Docere English Online</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docere English Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const teacherSelect = document.getElementById('teacher-select');
+      teacherSelect.addEventListener('change', updateCalendly);
+      updateCalendly();
+    
+      function updateCalendly(){
+        const value = teacherSelect.value;
+        let url;
+        if (value === 'Novie') url = 'https://calendly.com/noviereambonanza/30min';
+        else if (value === 'TeacherX') url = 'https://calendly.com/teacheroffline/30min';
+        document.getElementById('calendly-widget').innerHTML = '';
+        Calendly.initInlineWidget({url: url, parentElement: document.getElementById('calendly-widget')});
+      }
+    
+      // Feedback form handling
+      const feedbackForm = document.getElementById('feedback-form');
+      feedbackForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const rating = document.getElementById('rating').value;
+        const comment = document.getElementById('comment').value;
+        const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+        comments.push({rating, comment});
+        localStorage.setItem('comments', JSON.stringify(comments));
+        displayComments();
+        feedbackForm.reset();
+      });
+    
+      function displayComments(){
+        const comments = JSON.parse(localStorage.getItem('comments') || '[]');
+        const list = document.getElementById('comments-list');
+        list.innerHTML = '';
+        comments.forEach(c => {
+          const div = document.createElement('div');
+          div.className = 'comment-item';
+          div.innerHTML = `<strong>Rating: ${c.rating}/5</strong><p>${c.comment}</p>`;
+          list.appendChild(div);
+        });
+      }
+    
+      displayComments();
+    });
+    </script>
 </head>
 <body>
-  <header>
-    <div class="header-content">
-      <h1>Docere English Online</h1>
-      <p>Fun and High-Quality English and Science Learning for All Ages</p>
+<header class="header">
+  <h1>Docere English Online</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h2>Learn English and Science with Fun!</h2>
+    <p>Join our colorful, playful classes and book your lesson now.</p>
+  </section>
+  <section class="booking">
+    <label for="teacher-select">Choose a Teacher:</label>
+    <select id="teacher-select">
+      <option value="Novie">Teacher Novie</option>
+      <option value="TeacherX">Teacher X</option>
+    </select>
+    <div id="calendly-widget" style="min-width:320px;height:700px;"></div>
+    <div class="teams-chat">
+      <a href="https://teams.microsoft.com/l/chat/0/0?users=novi@yourdomain.com" target="_blank">Chat with Teacher Novie on Microsoft Teams</a>
     </div>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I hold a TEFL certificate and a Bachelor's degree in Education, majoring in Science. I have been teaching for almost 5 years across various platforms, providing lessons to learners ranging from 3 to 60 years old. I specialize in IELTS, TOEIC, EIKEN, Travel English, General English, Phonics, Reading, and General Science. My passion is to help students grow confidently and joyfully in their academic journeys.</p>
   </section>
-
-  <section id="booking">
-    <h2>Book a Lesson</h2>
-    <p style="color: #333;">(Please discuss the payment through private chat after booking!)</p>
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/noviereambonanza/30min" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
+  <section id="courses" class="courses">
+    <h3>Our Courses</h3>
+    <ul>
+      <li>General English (Beginners to Advanced)</li>
+      <li>IELTS, TOEIC, TOEFL, EIKEN Preparation</li>
+      <li>Science Classes for School</li>
+    </ul>
   </section>
-
-  <section id="live-chat">
-    <h2>Live Chat</h2>
-    <a href="https://teams.microsoft.com/l/chat/0/0?users=noviereambonanza@gmail.com" target="_blank">Chat with me on Microsoft Teams</a>
-  </section>
-
-  <section id="comments">
-    <h2>Student Comments & Ratings</h2>
-    <div id="comment-form">
-      <label>Name: <input type="text" id="name"></label>
-      <label>Rating: 
-        <select id="rating">
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★☆</option>
-          <option value="3">★★★☆☆</option>
-          <option value="2">★★☆☆☆</option>
-          <option value="1">★☆☆☆☆</option>
-        </select>
-      </label>
-      <label>Comment: <textarea id="comment-text"></textarea></label>
-      <button id="submit-comment">Submit</button>
-    </div>
+  <section id="feedback" class="feedback">
+    <h3>Student Feedback</h3>
+    <form id="feedback-form">
+      <label for="rating">Rating:</label>
+      <select id="rating" required>
+        <option value="">--Select--</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="3" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
     <div id="comments-list"></div>
   </section>
-
-  <section id="blog">
-    <h2>Blog</h2>
-    <p>Coming soon: Check out our blog posts!</p>
+  <section id="blog" class="blog">
+    <h3>From Our Blog</h3>
+    <p>Check out our latest posts on learning English and Science!</p>
   </section>
-
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form action="mailto:noviereambonanza@gmail.com" method="POST" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <textarea name="message" placeholder="Your message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <section id="payment">
-      <h2>Payments</h2>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_donations">
-        <input type="hidden" name="business" value="noviereambonanza@gmail.com">
-        <input type="hidden" name="currency_code" value="USD">
-        <button type="submit">Donate/Pay via PayPal</button>
-      </form>
-    </section>
-
-    <section id="other-teachers">
-      <p>Other teachers available if I'm unavailable. <a href="#contact">Contact us</a> to choose another teacher.</p>
-    </section>
-  </footer>
-
-  <section id="payment-policy" style="background-color: #FFF7E6; padding: 40px; text-align: center; margin-top: 50px;">
-    <h2>Payment Policy</h2>
-    <p>Please send payments via PayPal to:</p>
-    <p style="font-size: 1.2em; font-weight: bold;">
-      <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" alt="PayPal" style="width: 24px; vertical-align: middle; margin-right: 8px;">
-      noviereambonanza@gmail.com
-    </p>
-    <p>Payment should be completed before attending the class. Thank you for your cooperation!</p>
-  </section>
-
-  <section id="thank-you" style="background-color: #E6F7FF; padding: 30px; text-align: center; margin-top: 30px;">
-    <h2>Thank You!</h2>
-    <p>Thank you for choosing <strong>Docere English Online</strong>! We look forward to helping you grow and achieve your dreams. 🌟</p>
-  </section>
-
-  <script src="js/comments.js"></script>
+</main>
+<footer id="contact" class="footer">
+  <h3>Contact Us</h3>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="3" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</footer>
+<!-- Tawk.to live chat -->
+<script>
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/680d932dbe6663190a6bf9cb/1ipqgdqd0';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>
 </html>
