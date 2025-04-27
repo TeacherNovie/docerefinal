@@ -1,0 +1,1 @@
+Please replace 'background.jpg' with your kids cartoon educational background image in this directory.

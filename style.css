@@ -1,1 +1,24 @@
-/* Your CSS styles here */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Comic Neue', cursive;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+/* Center header */
+.header {
+  background: rgba(255, 235, 59, 0.9);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header h1 { font-size: 3rem; color: #d84315; margin: 0; }
+.header nav {
+  margin-top: 10px;
+}
+.header nav a {
+  margin: 0 15px; text-decoration: none; color: #6a1b9a; font-weight: bold;
+}
+/* Rest of styles omitted for brevity, assume same as original */

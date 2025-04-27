@@ -1,32 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docere English Online</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docere English Online</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
-    <!-- Your website content -->
-
-    <!-- Calendly inline widget begin -->
+<header class="header">
+  <h1>Docere English Online</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h2>Learn English and Science with Fun!</h2>
+    <p>Join our colorful, playful classes and book your lesson now.</p>
+  </section>
+  <section class="booking">
+    <label for="teacher-select">Choose a Teacher:</label>
+    <select id="teacher-select">
+      <option value="Novie">Teacher Novie</option>
+      <option value="TeacherX">Teacher X</option>
+    </select>
     <div class="calendly-inline-widget" data-url="https://calendly.com/noviereambonanza/30min" style="min-width:320px;height:700px;"></div>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
+    <div class="teams-chat">
+      <a href="https://teams.microsoft.com/l/chat/0/0?users=novi@yourdomain.com" target="_blank">Chat with Teacher Novie on Microsoft Teams</a>
+    </div>
+  </section>
+  <section id="courses" class="courses">
+    <h3>Our Courses</h3>
+    <ul>
+      <li>General English (Beginners to Advanced)</li>
+      <li>IELTS, TOEIC, TOEFL, EIKEN Preparation</li>
+      <li>Science Classes for School</li>
+    </ul>
+  </section>
+  <section id="feedback" class="feedback">
+    <h3>Student Feedback</h3>
+    <form id="feedback-form">
+      <label for="rating">Rating:</label>
+      <select id="rating" required>
+        <option value="">--Select--</option>
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+      </select>
+      <label for="comment">Comment:</label>
+      <textarea id="comment" rows="3" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="comments-list"></div>
+  </section>
+  <section id="blog" class="blog">
+    <h3>From Our Blog</h3>
+    <p>Check out our latest posts on learning English and Science!</p>
+  </section>
+</main>
+<footer id="contact" class="footer">
+  <h3>Contact Us</h3>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="3" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</footer>
 
-    <!-- Start of Tawk.to Script -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/680d932dbe6663190a6bf9cb/1ipqgdqd0';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!-- End of Tawk.to Script -->
-
+<!-- Tawk.to live chat -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/680d932dbe6663190a6bf9cb/1ipqgdqd0';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 </body>
 </html>
