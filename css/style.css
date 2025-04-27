@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 :root {
   --primary-color: #ffab00;
   --secondary-color: #ffdd83;
@@ -6,8 +8,9 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: var(--text-color);
   background-color: var(--secondary-color);
   line-height: 1.6;
@@ -18,15 +21,30 @@ header {
   background-image: url('../assets/images/header-bg.png');
   background-size: cover;
   background-position: center;
-  color: black;
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-header h1 { font-size: 3rem; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6); }
-header p { font-size: 1.2rem; text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6); }
+.header-content {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
 
 section {
   margin: 40px 0;
@@ -60,6 +78,17 @@ form input, form textarea, select, button {
   border: 2px solid var(--primary-color);
 }
 
-@media (min-width: 768px) {
-  body { max-width: 800px; margin: auto; }
+@media (max-width: 600px) {
+  header {
+    padding: 50px 10px;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  body {
+    padding: 10px;
+  }
 }
