@@ -1,24 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
 body {
   margin: 0;
-  font-family: 'Comic Neue', cursive;
-  background: url('background.jpg') no-repeat center center fixed;
+  font-family: 'Rubik', sans-serif;
+  background: url('https://images.unsplash.com/illustrations/u7gompM9kPs?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
   background-size: cover;
   color: #333;
 }
-/* Center header */
+
 .header {
   background: rgba(255, 235, 59, 0.9);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
-.header h1 { font-size: 3rem; color: #d84315; margin: 0; }
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #d84315;
+}
+
 .header nav {
   margin-top: 10px;
 }
+
 .header nav a {
-  margin: 0 15px; text-decoration: none; color: #6a1b9a; font-weight: bold;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #6a1b9a;
+  font-weight: bold;
 }
-/* Rest of styles omitted for brevity, assume same as original */
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(225, 190, 231, 0.7);
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #4a148c;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.booking {
+  padding: 20px;
+  background: rgba(255, 243, 224, 0.8);
+}
+
+.booking h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.booking label, .booking select {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.teams-chat a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #0078d4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.courses, .feedback, .blog {
+  padding: 20px;
+  margin: 20px;
+  background: rgba(200, 230, 201, 0.8);
+  border-radius: 15px;
+}
+
+.courses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.courses li {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.feedback form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback label, .feedback select, .feedback textarea {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.feedback button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.blog article {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.footer {
+  padding: 20px;
+  background: rgba(179, 229, 252, 0.8);
+  text-align: center;
+}
+
+.payment-policy p {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.footer form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.footer input, .footer textarea {
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #81d4fa;
+  border-radius: 10px;
+}
+
+.footer button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #0288d1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.thank-you {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
