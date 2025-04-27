@@ -4,92 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Docere English Online</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 </head>
 <body>
-  <header class="header">
-    <h1>Docere English Online</h1>
+  <header>
     <nav>
-      <a href="#">Home</a>
-      <a href="#courses">Courses</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
+      <h1>Docere English Online</h1>
+      <ul>
+        <li><a href="#booking">Book a Lesson</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#comments">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <section class="hero">
-      <h2>Learn English and Science with Fun!</h2>
-      <p>Join our colorful, playful classes and book your lesson now.</p>
-    </section>
-    <section class="booking">
-      <h3>Book Your Lesson</h3>
-      <label for="teacher-select">Choose a Teacher:</label>
-      <select id="teacher-select">
-        <option value="Novie">Teacher Novie</option>
-        <option value="TeacherX">Teacher X</option>
-      </select>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/noviereambonanza/30min" style="min-width:320px;height:700px;"></div>
-      <div class="teams-chat">
-        <a href="https://teams.microsoft.com/l/chat/0/0?users=novi@yourdomain.com" target="_blank">Chat on Microsoft Teams</a>
-      </div>
-    </section>
-    <section id="courses" class="courses">
-      <h3>Our Courses</h3>
-      <ul>
-        <li>General English (Beginners to Advanced)</li>
-        <li>IELTS, TOEIC, TOEFL, EIKEN Preparation</li>
-        <li>Science Classes for School</li>
-      </ul>
-    </section>
-    <section id="feedback" class="feedback">
-      <h3>Student Feedback</h3>
-      <form id="feedback-form">
-        <label for="rating">Rating:</label>
-        <select id="rating" required>
-          <option value="">--Select--</option>
-          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
-        </select>
-        <label for="comment">Comment:</label>
-        <textarea id="comment" rows="3" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <div id="comments-list"></div>
-    </section>
-    <section id="blog" class="blog">
-      <h3>From Our Blog</h3>
-      <article>
-        <h4>Sample Post Title</h4>
-        <p>This is a placeholder for your latest blog post. Update with your content!</p>
-      </article>
-    </section>
-  </main>
-  <footer id="contact" class="footer">
-    <div class="payment-policy">
-      <p>PayPal payments accepted at: <strong>noviereambonanza@gmail.com</strong></p>
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Learn English and Science with Novie</h2>
+      <p>Fun, interactive lessons for all ages.</p>
     </div>
-    <h3>Contact Us</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="3" required></textarea>
+  </section>
+  <section id="booking">
+    <h2>Book a 30-minute Lesson</h2>
+    <div class="notice">If Teacher Novie is unavailable, other teachers are available.</div>
+    <div class="calendly-inline-widget" data-url="https://calendly.com/noviereambonanza/30min" style="min-width:320px;height:700px;"></div>
+  </section>
+  <section id="live-chat">
+    <h2>Live Chat</h2>
+    <p>Chat with us on Microsoft Teams or via Tawk.to below:</p>
+    <a href="https://teams.microsoft.com/l/chat/0/0?users=noviereambonanza@gmail.com" class="teams-btn">Chat on Teams</a>
+  </section>
+  <!-- Start of Tawk.to Script -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/680d932dbe6663190a6bf9cb/1ipqgdqd0';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!-- End of Tawk.to Script -->
+  <section id="about">
+    <h2>About the Teacher</h2>
+    <p>Novie graduated with a degree in Education and holds TEFL and Science teaching certificates. With over a decade of teaching experience, Novie brings passion and expertise to every lesson.</p>
+  </section>
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Coming soon...</p>
+  </section>
+  <section id="reviews">
+    <h2 id="comments">Student Reviews</h2>
+    <form id="commentForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="number" id="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+      <textarea id="comment" placeholder="Your Comments" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="commentsList"></div>
+  </section>
+  <section id="payment">
+    <h2>Payment</h2>
+    <p>PayPal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=noviereambonanza%40gmail.com&item_name=Docere%20English%20Online&currency_code=USD" target="_blank">Pay with PayPal</a></p>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <form action="mailto:noviereambonanza@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
-    <p class="thank-you">Thank you for choosing Docere English Online!</p>
+  </section>
+  <footer>
+    <p>&copy; 2025 Docere English Online</p>
   </footer>
-  
-  <!-- Tawk.to live chat -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/680d932dbe6663190a6bf9cb/1ipqgdqd0';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
