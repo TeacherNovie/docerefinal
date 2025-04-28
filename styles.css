@@ -1,105 +1,14 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-}
-body {
-  background: linear-gradient(to right, #ffecd2, #fcb69f);
-  color: #333;
-  line-height: 1.6;
-}
-header {
-  background: #f8b195;
-  padding: 20px;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-nav ul {
-  display: flex;
-  list-style: none;
-}
-nav li {
-  margin-left: 15px;
-}
-nav a {
-  text-decoration: none;
-  color: #355c7d;
-  font-weight: bold;
-}
-#hero {
-  background-image: url('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-  background-size: cover;
-  background-position: center;
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; }
+header, footer { background: #f2f2f2; padding: 1em; text-align: center; }
+section { padding: 2em; }
+.video-container { text-align: center; margin-top: 20px; }
+iframe { max-width: 100%; }
+.video-container {
   text-align: center;
-  color: white;
-  padding: 20px;
+  margin: 20px 0;
 }
-section {
-  padding: 40px 20px;
-}
-.notice {
-  background: #ffeb3b;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-#booking, #live-chat, #about, #blog, #reviews, #payment, #contact {
-  background: white;
-  margin: 20px auto;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.calendly-inline-widget {
-  width: 100% !important;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-form input, form textarea, form button {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-form button {
-  background: #355c7d;
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 12px;
-}
-.teams-btn {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 10px 15px;
-  background: #6264A7;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
+.video-container iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
 }
